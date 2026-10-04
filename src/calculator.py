@@ -29,6 +29,11 @@ class Calculator:
             raise ZeroDivisionError("Деление на ноль невозможно")
         return a / b
 
+
+    def is_even(self, n):
+        """Проверяет чётность числа (демонстрация для CI)."""
+        return n % 2 == 0
+
     def is_prime_number(self, n):
         if isinstance(n, bool) or not isinstance(n, int):
             raise TypeError("Простота определяется только для целых чисел")

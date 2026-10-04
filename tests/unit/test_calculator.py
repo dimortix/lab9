@@ -91,3 +91,12 @@ def test_is_prime_false(calc, n):
 def test_is_prime_rejects_non_integers(calc, bad):
     with pytest.raises(TypeError):
         calc.is_prime_number(bad)
+
+
+@pytest.mark.parametrize("n, expected", [
+    (0, True), (1, False), (2, True), (3, False),
+    (4, True), (7, False), (10, True), (15, False),
+])
+def test_is_even(calc, n, expected):
+    """Чётность числа (тест добавлен вместе с методом в ветке feature/add-is-even)."""
+    assert calc.is_even(n) is expected
