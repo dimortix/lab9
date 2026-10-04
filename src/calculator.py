@@ -32,7 +32,7 @@ class Calculator:
 
     def is_even(self, n):
         """Проверяет чётность числа (демонстрация для CI)."""
-        return n // 2 == 0
+        return n % 2 == 0
 
     def is_prime_number(self, n):
         if isinstance(n, bool) or not isinstance(n, int):
