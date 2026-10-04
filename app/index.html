@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Вход — Учебный портал</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="card">
+  <h1>Вход в систему</h1>
+  <p class="subtitle">Учебный портал кафедры информатики</p>
+
+  <!-- Поля имеют стабильные атрибуты id и name для автотестов -->
+  <form id="loginForm" name="loginForm" novalidate>
+    <label for="username">Логин</label>
+    <input id="username" name="username" type="text" autocomplete="username"
+           placeholder="Введите логин" aria-describedby="usernameError">
+    <div class="error" id="usernameError" role="alert" hidden></div>
+
+    <label for="password">Пароль</label>
+    <input id="password" name="password" type="password" autocomplete="current-password"
+           placeholder="Введите пароль" aria-describedby="passwordError">
+    <div class="error" id="passwordError" role="alert" hidden></div>
+
+    <div class="row">
+      <label class="checkbox"><input id="remember" name="remember" type="checkbox"> Запомнить меня</label>
+      <a id="forgotLink" href="#forgot">Забыли пароль?</a>
+    </div>
+
+    <button id="loginButton" name="login" type="submit">Войти</button>
+    <div class="error" id="formError" role="alert" hidden></div>
+  </form>
+
+  <!-- Блок успешного входа: появляется только после валидных учётных данных -->
+  <section id="welcomeBlock" data-testid="welcome" hidden>
+    <p class="hello">Добро пожаловать, <b id="welcomeUser">гость</b>!</p>
+    <button id="logoutButton" name="logout" type="button">Logout</button>
+  </section>
+</main>
+
+<script src="login.js"></script>
+</body>
+</html>

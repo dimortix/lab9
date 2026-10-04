@@ -1,0 +1,12 @@
+# Служебные файлы Python и тестов
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Логи и временные данные
+*.log
+nohup.out
+.DS_Store
